@@ -1,0 +1,63 @@
+{
+  "name": "pb-network-edubase-back",
+  "version": "1.0.0",
+  "description": "DEMO-PC",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --inline --host 0.0.0.0 --progress --config webpack/webpack.dev.conf.js",
+    "build": "cross-env NODE_ENV=production env_config=prod env_show=false node webpack/build/index.js",
+    "prebuild": "rm -rf ./docker/dist",
+    "postbuild": "cd ./docker && docker build -t registry.cn-qingdao.aliyuncs.com/cloud_fosung/demo-front:1.0 ./ && docker push registry.cn-qingdao.aliyuncs.com/cloud_fosung/demo-front:1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://litaoya@git.fosung.com/litaoya/fosung-cloud-front-template.git"
+  },
+  "devDependencies": {
+    "extract-text-webpack-plugin": "^3.0.2",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-webpack-plugin": "2.30.1",
+    "webpack": "3.11.0",
+    "webpack-dev-server": "2.9.7",
+    "webpack-merge": "4.1.1",
+    "portfinder": "1.0.13",
+    "pushstate-server": "^3.0.1",
+    "open-browser-webpack-plugin": "^0.0.5",
+    "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "compression-webpack-plugin": "^1.1.11",
+    "copy-webpack-plugin": "^4.5.2",
+    "postcss-import": "11.0.0",
+    "postcss-loader": "2.0.9",
+    "postcss-url": "7.3.0",
+    "sass-loader": "6.0.6",
+    "url-loader": "0.6.2",
+    "vue-loader": "13.5.0",
+    "vue-style-loader": "3.0.3",
+    "css-loader": "0.28.7",
+    "cross-env": "^5.2.0",
+    "file-loader": "^1.1.11",
+    "vue-template-compiler": "2.6.11",
+    "babel-core": "6.26.0",
+    "babel-eslint": "8.0.3",
+    "babel-helper-vue-jsx-merge-props": "2.0.3",
+    "babel-loader": "7.1.2",
+    "babel-plugin-syntax-jsx": "6.18.0",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-plugin-transform-vue-jsx": "3.5.0",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-stage-2": "6.24.1",
+    "mockjs": "^1.1.0"
+  },
+  "dependencies": {
+    "@riophae/vue-treeselect": "0.0.38",
+    "autoprefixer": "7.2.3",
+    "easyscroll": "^1.0.1",
+    "element-ui": "^2.12.0",
+    "jboot-env": "1.2.26",
+    "node-sass": "^4.7.2",
+    "wangeditor": "^3.1.1",
+    "ora": "^3.0.0"
+  },
+  "author": "litao",
+  "license": "ISC"
+}
